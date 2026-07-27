@@ -3,7 +3,7 @@
 <div class="space-y-6">
     <div>
         <h2 class="font-sora font-semibold text-white text-lg">Reports & Analytics</h2>
-        <p class="text-slate-500 text-sm">Filter karke performance dekhein, ya export karein</p>
+        <p class="text-slate-500 text-sm">View performance by applying filters, or export the data.</p>
     </div>
 
     <div class="glass rounded-xl p-5 grid grid-cols-1 sm:grid-cols-4 gap-3">
@@ -56,7 +56,7 @@
                     <td>{{ $r->sent_to_admin ? '✅' : '—' }}</td>
                 </tr>
                 @empty
-                <tr><td colspan="6" class="py-6 text-center text-slate-500">Abhi tak koi weekly report generate nahi hua hai.</td></tr>
+                <tr><td colspan="6" class="py-6 text-center text-slate-500">No weekly report has been generated yet..</td></tr>
                 @endforelse
             </tbody>
         </table>

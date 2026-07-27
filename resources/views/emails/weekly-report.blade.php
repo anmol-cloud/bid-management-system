@@ -25,7 +25,7 @@
             </tr>
         </table>
 
-        <p style="color: #64748b; font-size: 12px; margin-top: 24px;">Ye report automatically generate hui hai — Bid Command Center se.</p>
+        <p style="color: #64748b; font-size: 12px; margin-top: 24px;">This report has been automatically generated — from the Bid Command Center.</p>
     </div>
 </body>
 </html>

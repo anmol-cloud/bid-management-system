@@ -18,7 +18,7 @@
         @endunless
     </div>
     @empty
-    <div class="glass rounded-xl p-8 text-center text-slate-500">Koi notification abhi tak nahi hai.</div>
+    <div class="glass rounded-xl p-8 text-center text-slate-500">There are no notifications yet.</div>
     @endforelse
 
     <div>{{ $notifications->links() }}</div>

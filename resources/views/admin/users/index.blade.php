@@ -4,7 +4,7 @@
     <div class="flex items-center justify-between flex-wrap gap-3">
         <div>
             <h2 class="font-sora font-semibold text-white text-lg">User Management</h2>
-            <p class="text-slate-500 text-sm">Sales Managers aur Project Managers ko manage karein</p>
+            <p class="text-slate-500 text-sm">Manage sales managers and project managers.</p>
         </div>
         <button onclick="openCreateModal()" class="bg-gradient-to-r from-amber-glow to-amber-600 text-ink-900 font-sora font-semibold px-4 py-2.5 rounded-lg text-sm hover:opacity-90 transition">
             <i class="fa-solid fa-plus mr-1.5"></i> Add User

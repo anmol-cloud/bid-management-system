@@ -24,7 +24,7 @@ class AssignmentNotification extends Notification
     {
         return [
             'title' => 'Naya Upwork ID assign hua hai',
-            'message' => "{$this->account->account_name} ({$this->account->upwork_id}) aapko assign kiya gaya hai.",
+            'message' => "{$this->account->account_name} ({$this->account->upwork_id}) has to assigned you",
             'upwork_account_id' => $this->account->id,
         ];
     }

@@ -3,7 +3,7 @@
 <div class="space-y-6">
     <div>
         <h2 class="font-sora font-semibold text-white text-lg">Account Assignments</h2>
-        <p class="text-slate-500 text-sm">Upwork IDs ko Sales Managers aur Project Managers ko assign / reassign karein</p>
+        <p class="text-slate-500 text-sm">Assign/reassign Upwork leads to sales managers and project managers.</p>
     </div>
 
     <div class="glass rounded-xl p-4 sm:p-6 overflow-x-auto">

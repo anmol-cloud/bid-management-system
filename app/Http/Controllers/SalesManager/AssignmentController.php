@@ -39,6 +39,6 @@ class AssignmentController extends Controller
             UpworkAccount::find($data['upwork_account_id'])
         ));
 
-        return response()->json(['message' => 'Upwork ID Project Manager ko assign kar diya gaya hai.']);
+        return response()->json(['message' => 'The Upwork project has been assigned to the manager.']);
     }
 }

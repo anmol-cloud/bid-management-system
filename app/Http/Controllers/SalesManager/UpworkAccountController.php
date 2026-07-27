@@ -60,7 +60,7 @@ class UpworkAccountController extends Controller
 
         $account = UpworkAccount::create($data);
 
-        return response()->json(['message' => 'Upwork account add ho gaya hai.', 'account' => $account]);
+        return response()->json(['message' => 'The Upwork account has been added.', 'account' => $account]);
     }
 
     public function update(Request $request, UpworkAccount $upworkAccount)
@@ -77,13 +77,13 @@ class UpworkAccountController extends Controller
 
         $upworkAccount->update($data);
 
-        return response()->json(['message' => 'Upwork account update ho gaya hai.']);
+        return response()->json(['message' => 'The Upwork account has been updated.']);
     }
 
     public function destroy(UpworkAccount $upworkAccount)
     {
         $upworkAccount->delete();
 
-        return response()->json(['message' => 'Upwork account delete kar diya gaya hai.']);
+        return response()->json(['message' => 'The Upwork account has been deleted.']);
     }
 }

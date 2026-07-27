@@ -49,7 +49,7 @@
                 </div>
                 <label class="flex items-center gap-2 text-xs text-slate-400">
                     <input type="checkbox" name="remember" class="rounded border-white/20 bg-ink-800 text-amberglow focus:ring-amberglow/40">
-                    Mujhe yaad rakho
+                    Remember me.
                 </label>
                 <button type="submit"
                         class="w-full bg-gradient-to-r from-amberglow to-amber-600 text-ink-900 font-sora font-bold py-2.5 rounded-lg hover:opacity-90 transition shadow-[0_0_20px_rgba(245,185,66,0.2)]">

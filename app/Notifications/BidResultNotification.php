@@ -21,11 +21,11 @@ class BidResultNotification extends Notification
 
     public function toArray($notifiable): array
     {
-        $statusText = $this->bid->status === 'won' ? 'jeet li gayi hai! 🎉' : 'result mil gaya hai.';
+        $statusText = $this->bid->status === 'won' ? 'It has been won! 🎉' : 'The result has been obtained.';
 
         return [
             'title' => 'Bid update',
-            'message' => "'{$this->bid->job_title}' wali bid {$statusText}",
+            'message' => "Your bid for'{$this->bid->job_title}' has been {$statusText}",
             'bid_id' => $this->bid->id,
         ];
     }

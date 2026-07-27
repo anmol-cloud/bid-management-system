@@ -70,6 +70,6 @@ class AssignmentController extends Controller
             ]);
         });
 
-        return response()->json(['message' => 'Assignment update ho gaya hai.']);
+        return response()->json(['message' => 'Assignment updated.']);
     }
 }

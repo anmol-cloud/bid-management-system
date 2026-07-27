@@ -61,7 +61,7 @@ class BidController extends Controller
 
         $bid = Bid::create($data);
 
-        return response()->json(['message' => 'Bid add ho gaya hai.', 'bid' => $bid]);
+        return response()->json(['message' => 'the bid has been added.', 'bid' => $bid]);
     }
 
     public function update(Request $request, Bid $bid)
@@ -80,7 +80,7 @@ class BidController extends Controller
 
         $bid->update($data);
 
-        return response()->json(['message' => 'Bid update ho gaya hai.']);
+        return response()->json(['message' => 'the bid has been updated.']);
     }
 
     public function destroy(Request $request, Bid $bid)
@@ -89,6 +89,6 @@ class BidController extends Controller
 
         $bid->delete();
 
-        return response()->json(['message' => 'Bid delete kar diya gaya hai.']);
+        return response()->json(['message' => 'The bid has been deleted.']);
     }
 }

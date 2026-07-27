@@ -19,7 +19,7 @@ class NotificationController extends Controller
         $notification = $request->user()->notifications()->findOrFail($id);
         $notification->markAsRead();
 
-        return response()->json(['message' => 'Notification read mark ho gayi hai.']);
+        return response()->json(['message' => 'Notification readed.']);
     }
 
     public function unreadCount(Request $request)

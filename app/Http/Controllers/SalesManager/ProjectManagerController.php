@@ -54,7 +54,7 @@ class ProjectManagerController extends Controller
 
         $pm = User::create($data);
 
-        return response()->json(['message' => 'Project Manager add ho gaya hai.', 'user' => $pm]);
+        return response()->json(['message' => 'The project manager has been added.', 'user' => $pm]);
     }
 
     public function update(Request $request, User $projectManager)
@@ -74,7 +74,7 @@ class ProjectManagerController extends Controller
 
         $projectManager->update($data);
 
-        return response()->json(['message' => 'Project Manager update ho gaya hai.']);
+        return response()->json(['message' => 'The Project Manager has been updated']);
     }
 
     public function destroy(Request $request, User $projectManager)
@@ -83,6 +83,6 @@ class ProjectManagerController extends Controller
 
         $projectManager->delete();
 
-        return response()->json(['message' => 'Project Manager delete kar diya gaya hai.']);
+        return response()->json(['message' => 'The project manager has been deleted.']);
     }
 }

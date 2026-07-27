@@ -14,7 +14,7 @@ class GenerateWeeklyReport extends Command
 {
     protected $signature = 'report:generate-weekly';
 
-    protected $description = 'Pichle hafte ka bid performance report banata hai aur Admin ko email karta hai';
+    protected $description = 'Last weeks bid performance report is generated and emailed to the admin.';
 
     public function handle(): int
     {
@@ -44,7 +44,7 @@ class GenerateWeeklyReport extends Command
 
         $report->update(['sent_to_admin' => true]);
 
-        $this->info("Weekly report ban gaya aur {$admins->count()} admin(s) ko bhej diya gaya hai.");
+        $this->info("The weekly report has been generated and sent to {$admins->count()} admin(s).");
 
         return self::SUCCESS;
     }

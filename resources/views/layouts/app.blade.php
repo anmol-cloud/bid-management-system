@@ -175,11 +175,11 @@
 
     function confirmDelete(callback) {
         Swal.fire({
-            title: 'Pakka delete karna hai?',
-            text: 'Ye action wapas nahi ho sakta.',
+            title: 'Do you really want to delete it?',
+            text: 'This action cannot be undone..',
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonText: 'Haan, delete karo',
+            confirmButtonText: 'yes, go ahead ',
             cancelButtonText: 'Cancel',
             background: '#161a23', color: '#e2e8f0',
             confirmButtonColor: '#ef4444',
@@ -187,7 +187,7 @@
     }
 
     function ajaxError(xhr) {
-        const msg = xhr.responseJSON?.message || 'Kuch gadbad ho gayi, dobara try karein.';
+        const msg = xhr.responseJSON?.message || 'Something went wrong; please try again.';
         toast(msg, 'error');
     }
 
