@@ -52,12 +52,14 @@ class UserController extends Controller
             'phone' => ['nullable', 'string', 'max:20'],
         ]);
 
+        $plainPassword = $data['password'];
         $data['password'] = Hash::make($data['password']);
         $data['created_by'] = $request->user()->id;
 
         $user = User::create($data);
+        $user->notify(new \App\Notifications\UserCreatedNotification($plainPassword));
 
-        return response()->json(['message' => 'User bana diya gaya hai.', 'user' => $user]);
+        return response()->json(['message' => 'The user has been created.', 'user' => $user]);
     }
 
     public function update(Request $request, User $user)
@@ -76,13 +78,13 @@ class UserController extends Controller
 
         $user->update($data);
 
-        return response()->json(['message' => 'User update ho gaya hai.', 'user' => $user]);
+        return response()->json(['message' => 'The user has been updated.', 'user' => $user]);
     }
 
     public function destroy(User $user)
     {
         $user->delete();
 
-        return response()->json(['message' => 'User delete kar diya gaya hai.']);
+        return response()->json(['message' => 'The user has been deleted.']);
     }
 }

@@ -38,13 +38,13 @@
                 <div>
                     <label class="block text-xs font-medium text-slate-400 mb-1.5">Email</label>
                     <input type="email" name="email" value="{{ old('email') }}" required autofocus
-                           class="w-full bg-ink-800/60 border border-white/10 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:ring-2 focus:ring-amberglow/40 focus:border-amberglow/50"
+                           class="w-full bg-ink-800/60 border border-white/10 rounded-lg px-4 py-2.5 text-black text-sm focus:outline-none focus:ring-2 focus:ring-amberglow/40 focus:border-amberglow/50"
                            placeholder="you@company.com">
                 </div>
                 <div>
                     <label class="block text-xs font-medium text-slate-400 mb-1.5">Password</label>
                     <input type="password" name="password" required
-                           class="w-full bg-ink-800/60 border border-white/10 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:ring-2 focus:ring-amberglow/40 focus:border-amberglow/50"
+                           class="w-full bg-ink-800/60 border border-white/10 rounded-lg px-4 py-2.5 text-black text-sm focus:outline-none focus:ring-2 focus:ring-amberglow/40 focus:border-amberglow/50"
                            placeholder="••••••••">
                 </div>
                 <label class="flex items-center gap-2 text-xs text-slate-400">

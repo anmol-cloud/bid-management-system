@@ -70,6 +70,16 @@ class AssignmentController extends Controller
             ]);
         });
 
+        $account = UpworkAccount::find($data['upwork_account_id']);
+
+        if (! empty($data['sales_manager_id'])) {
+            User::find($data['sales_manager_id'])?->notify(new \App\Notifications\AssignmentNotification($account));
+        }
+
+        if (! empty($data['project_manager_id'])) {
+            User::find($data['project_manager_id'])?->notify(new \App\Notifications\AssignmentNotification($account));
+        }
+
         return response()->json(['message' => 'Assignment updated.']);
     }
 }

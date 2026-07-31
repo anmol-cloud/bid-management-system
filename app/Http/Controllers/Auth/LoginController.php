@@ -33,7 +33,7 @@ class LoginController extends Controller
         if (Auth::user()->status !== 'active') {
             Auth::logout();
             return back()->withErrors([
-                'email' => 'Aapka account currently inactive hai. Admin se contact karein.',
+                'email' => 'Your account is currently inactive. Contact the admin.',
             ]);
         }
 
