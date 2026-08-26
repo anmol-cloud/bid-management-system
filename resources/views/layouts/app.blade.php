@@ -57,23 +57,26 @@
         .paginate_button.current { background: #f5b942 !important; color: #0a0c10 !important; border-radius: 6px; }
     </style>
 </head>
-<body class="font-inter text-slate-200 min-h-screen">
+<body class="font-inter text-slate-200 h-screen overflow-hidden">
 
-<div class="flex min-h-screen" x-data="{ sidebarOpen: false }">
+<div class="flex h-screen overflow-hidden" x-data="{ sidebarOpen: false }">
     {{-- Sidebar --}}
-    <aside class="fixed lg:static z-40 inset-y-0 left-0 w-64 glass border-r border-white/5 transform lg:translate-x-0 transition-transform duration-200 -translate-x-full"
+    <aside class="fixed lg:static z-40 inset-y-0 left-0 w-72 sm:w-64 max-w-[85vw] h-full glass border-r border-white/5 transform lg:translate-x-0 transition-transform duration-200 -translate-x-full flex flex-col"
            id="sidebar">
-        <div class="flex items-center gap-3 px-6 py-5 border-b border-white/5">
-            <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-amber-glow to-amber-600 flex items-center justify-center shadow-glow">
+        <div class="flex items-center gap-3 px-6 py-5 border-b border-white/5 shrink-0">
+            <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-amber-glow to-amber-600 flex items-center justify-center shadow-glow shrink-0">
                 <i class="fa-solid fa-bolt text-ink-900 text-sm"></i>
             </div>
-            <div>
-                <p class="font-sora font-bold text-white text-sm leading-tight">Bid Command</p>
+            <div class="min-w-0">
+                <p class="font-sora font-bold text-white text-sm leading-tight truncate">Bid Command</p>
                 <p class="text-[11px] text-slate-500">Center</p>
             </div>
+            <button id="sidebarClose" class="lg:hidden ml-auto text-slate-400 hover:text-white shrink-0">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
         </div>
 
-        <nav class="px-3 py-4 space-y-1 text-sm">
+        <nav class="flex-1 min-h-0 overflow-y-auto px-3 py-4 space-y-1 text-sm">
             <a href="{{ route('dashboard') }}" class="flex items-center gap-3 px-3 py-2.5 rounded-lg {{ request()->routeIs('dashboard') ? 'bg-amber-glow/10 text-amber-glow' : 'text-slate-400 hover:bg-white/5 hover:text-white' }} transition">
                 <i class="fa-solid fa-gauge-high w-4"></i> Dashboard
             </a>
@@ -89,6 +92,9 @@
                 </a>
                 <a href="{{ route('admin.reports.index') }}" class="flex items-center gap-3 px-3 py-2.5 rounded-lg {{ request()->routeIs('admin.reports.*') ? 'bg-amber-glow/10 text-amber-glow' : 'text-slate-400 hover:bg-white/5 hover:text-white' }} transition">
                     <i class="fa-solid fa-chart-line w-4"></i> Reports & Analytics
+                </a>
+                <a href="{{ route('admin.bids.index') }}" class="flex items-center gap-3 px-3 py-2.5 rounded-lg {{ request()->routeIs('admin.bids.*') ? 'bg-amber-glow/10 text-amber-glow' : 'text-slate-400 hover:bg-white/5 hover:text-white' }} transition">
+                    <i class="fa-solid fa-gavel w-4"></i> All Bids
                 </a>
             @endif
 
@@ -109,7 +115,7 @@
             @endauth
         </nav>
 
-        <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-white/5">
+        <div class="shrink-0 p-4 border-t border-white/5">
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 <button class="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:bg-red-500/10 hover:text-red-400 transition text-sm">
@@ -122,7 +128,7 @@
     <div class="fixed inset-0 bg-black/60 z-30 lg:hidden hidden" id="sidebarOverlay"></div>
 
     {{-- Main --}}
-    <div class="flex-1 min-w-0">
+    <div class="flex-1 min-w-0 h-screen overflow-y-auto">
         <header class="glass border-b border-white/5 px-4 sm:px-6 py-4 flex items-center justify-between sticky top-0 z-20">
             <div class="flex items-center gap-3">
                 <button id="sidebarToggle" class="lg:hidden text-slate-400 hover:text-white">
@@ -165,6 +171,10 @@
         document.getElementById('sidebarOverlay').classList.toggle('hidden');
     });
     document.getElementById('sidebarOverlay')?.addEventListener('click', () => {
+        document.getElementById('sidebar').classList.add('-translate-x-full');
+        document.getElementById('sidebarOverlay').classList.add('hidden');
+    });
+    document.getElementById('sidebarClose')?.addEventListener('click', () => {
         document.getElementById('sidebar').classList.add('-translate-x-full');
         document.getElementById('sidebarOverlay').classList.add('hidden');
     });

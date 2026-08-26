@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AssignmentController as AdminAssignmentController;
+use App\Http\Controllers\Admin\BidController as AdminBidController;
 use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\LoginController;
@@ -46,6 +47,9 @@ Route::middleware('auth')->group(function () {
         Route::get('/reports/analytics', [ReportController::class, 'analytics'])->name('reports.analytics');
         Route::get('/reports/{report}/pdf', [ReportController::class, 'exportPdf'])->name('reports.pdf');
         Route::get('/reports/export/excel', [ReportController::class, 'exportExcel'])->name('reports.excel');
+
+        Route::get('/bids', [AdminBidController::class, 'index'])->name('bids.index');
+        Route::get('/bids/data', [AdminBidController::class, 'data'])->name('bids.data');
     });
 
     // ---- Admin + Sales Manager ----
