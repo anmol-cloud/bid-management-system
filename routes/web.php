@@ -13,7 +13,9 @@ use App\Http\Controllers\SalesManager\UpworkAccountController;
 use App\Http\Controllers\Shared\NotificationController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', fn () => redirect()->route('login'));
+Route::get('/', function () {
+    return auth()->check() ? redirect()->route('dashboard') : view('landing');
+})->name('landing');
 
 // ---- Guest routes ----
 Route::middleware('guest')->group(function () {
